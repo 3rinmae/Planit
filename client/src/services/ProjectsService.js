@@ -11,6 +11,14 @@ async getProjects(){
   const newProjects = res.data.map(pojo => new Project(pojo))
   AppState.myProjects = newProjects
 }
+
+async createProject(projectData){
+  const res = await api.post('api/projects', projectData)
+  logger.log('project created', res.data)
+  const newProject = new Project(res.data)
+  AppState.myProjects.push(newProject)
+  return newProject
+}
 }
 
 export const projectsService = new ProjectsService()

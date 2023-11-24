@@ -1,13 +1,14 @@
 <template>
   <div class="container p-5">
-    <section class="row main-card">
+    <section v-if="account.id" class="row main-card">
       <div class="col-12 p-4 d-flex justify-content-between align-items-center">
         <div>
           <p class="fs-2 m-0">Projects</p>
           <p class="m-0">All projects for {{ account.name }} are listed below</p>
         </div>
         <div>
-          <button type="button" role="button" class="btn btn-outline-dark">Create Project</button>
+          <button type="button" role="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+            data-bs-target="#projectFormModal">Create Project</button>
         </div>
       </div>
       <div class="col-12 p-5">
@@ -27,7 +28,7 @@
         </section>
       </div>
     </section>
-    <!-- <section>
+    <section v-else>
       <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
         <div class="home-card p-5 bg-white rounded elevation-3">
           <h1 class="my-4 text-center">
@@ -37,7 +38,7 @@
           </h1>
         </div>
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -59,10 +60,12 @@ export default {
 
 <style scoped lang="scss">
 .main-card {
-  border-radius: 15px;
-  box-shadow: 0 5px 10px rgb(132, 132, 132);
-  max-height: 85vh;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px #949e8d;
+  max-height: 80vh;
   overflow-y: scroll;
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
 }
 
 .title-border {

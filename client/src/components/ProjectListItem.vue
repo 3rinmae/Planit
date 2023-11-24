@@ -2,7 +2,7 @@
   <div class="col-4">
     <router-link :title="`See details about ${projectProp.name}`"
       :to="{ name: 'ProjectDetails', params: { projectId: projectProp.id } }">
-      <p class="m-0">{{ projectProp.name }}</p>
+      <p class="m-0 text-black fs-5">{{ projectProp.name }}</p>
     </router-link>
   </div>
   <div class="col-4">
