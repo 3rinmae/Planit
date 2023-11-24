@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark px-3 nav-color">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center justify-content-center">
         <p class="fs-1 m-0">Progress</p>
@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+.nav-color {
+  background-color: #34412a;
+}
+
 a:hover {
   text-decoration: none;
 }
